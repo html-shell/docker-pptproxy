@@ -11,7 +11,6 @@ refuse-pap
 refuse-eap
 refuse-chap
 refuse-mschap
-require-mppe-128
 nobsdcomp
 nodeflate
 name "${USERNAME}"
@@ -33,5 +32,8 @@ _EOF_
 # fooo
 route add -net 192.168.0.0 netmask 255.255.0.0 gw 172.17.0.1
 
-pon vpn debug dump logfd 2 updetach persist "$@"
-exec sockd
+# pon vpn debug dump logfd 2 updetach persist "$@"
+# exec sockd
+
+
+tail -f /dev/null
