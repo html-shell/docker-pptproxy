@@ -8,6 +8,7 @@ RUN yum -y install epel-release
 RUN yum -y install ppp pptp pptp-setup
 
 ADD entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
 ADD sockd.conf /etc/sockd.conf
 EXPOSE 1080
 ENTRYPOINT ["/entrypoint.sh"]
