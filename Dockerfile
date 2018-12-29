@@ -1,10 +1,11 @@
-FROM alpine:edge
-MAINTAINER Seonggi Yang <seonggi.yang@gmail.com>
+FROM ubuntu:18.04
+MAINTAINER Yonggang Luo <luoyonggang@gmail.com>
 
-RUN apk add --no-cache \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
-    pptpclient dante-server
+RUN apt-get -y update
+RUN apt-get -y install vim net-tools pptp-linux inetutils-ping curl iproute2
+
 ADD entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
 ADD sockd.conf /etc/sockd.conf
 EXPOSE 1080
 ENTRYPOINT ["/entrypoint.sh"]
