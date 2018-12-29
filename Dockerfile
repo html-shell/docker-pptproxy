@@ -6,6 +6,6 @@ RUN apt-get -y install vim net-tools pptp-linux inetutils-ping curl iproute2 dan
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
-ADD sockd.conf /etc/sockd.conf
+ADD danted.conf /etc/danted.conf
 EXPOSE 1080
 ENTRYPOINT ["/entrypoint.sh"]
