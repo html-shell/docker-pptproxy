@@ -21,6 +21,10 @@ sleep 2
 
 ip route replace default dev ppp0
 
-exec sockd
+sleep 2
+
+# exec sockd
+danted -f /etc/danted.conf
+# danted -d 0  -f /etc/danted.conf
 
 tail -f /dev/null
